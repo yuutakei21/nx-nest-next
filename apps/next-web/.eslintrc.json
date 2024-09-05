@@ -15,7 +15,17 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              "@mui/material",
+              "@mui/icons-material"
+            ]
+          }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
