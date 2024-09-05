@@ -1,0 +1,7 @@
+nx g @nx/nest:application --e2eTestRunner=none --unitTestRunner=none  --directory=apps/nest-api
+
+nx g @nx/next:application --e2eTestRunner=none --unitTestRunner=none  --directory=apps/next-web
+
+nx g @nx/js:lib  --directory=libs/prisma
+nx g @nx/react:lib  --directory=libs/ui
+nx g @nx/react:lib  --directory=libs/graphql
