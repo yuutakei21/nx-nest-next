@@ -1,6 +1,8 @@
-"use client"
+'use client';
+
 import './global.css';
-import '@fortawesome/fontawesome-free/css/all.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import ThemeRegistry from './providers/ThemeRegistry';
 
 export default function RootLayout({
   children,
@@ -9,7 +11,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeRegistry>{children}</ThemeRegistry>
+      </body>
     </html>
   );
 }
