@@ -4,6 +4,9 @@
 import React from 'react';
 
 import Navbar from '../../../components/Navbar.js';
+import Image from 'next/image.js';
+import * as GithubIcon from './img/github.svg';
+import * as GoogleIcon from './img/google.svg';
 
 export default function Login() {
   return (
@@ -14,7 +17,7 @@ export default function Login() {
           <div
             className="absolute top-0 w-full h-full bg-gray-900"
             style={{
-              backgroundImage: 'url(assets/img/bg_register2.jpg)',
+              backgroundImage: 'url(' + '/assets/img/bg_register2.jpg' + ')',
               backgroundSize: '100%',
               backgroundRepeat: 'no-repeat',
             }}
@@ -35,10 +38,11 @@ export default function Login() {
                         type="button"
                         style={{ transition: 'all .15s ease' }}
                       >
-                        <img
+                        <Image
+                          priority
+                          src={GithubIcon}
                           alt="..."
                           className="w-5 mr-1"
-                          src={'assets/img/github.svg'}
                         />
                         Github
                       </button>
@@ -47,10 +51,11 @@ export default function Login() {
                         type="button"
                         style={{ transition: 'all .15s ease' }}
                       >
-                        <img
+                        <Image
+                          priority
+                          src={GoogleIcon}
                           alt="..."
                           className="w-5 mr-1"
-                          src={'assets/img/google.svg'}
                         />
                         Google
                       </button>
