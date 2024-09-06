@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-nest-next/ui": ["libs/ui/src/index.ts"],
-      "@nx-nest-next/ui/server": ["libs/ui/src/server.ts"]
+      "@libs/ui": ["libs/ui/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
