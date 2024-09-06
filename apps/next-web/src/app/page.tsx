@@ -1,7 +1,6 @@
 'use client';
 
 import styled from '@emotion/styled';
-import { Box } from '@libs/ui';
 
 const StyledPage = styled.div`
   .page {
@@ -16,7 +15,6 @@ export default function Index() {
    */
   return (
     <StyledPage>
-      <Box></Box>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
