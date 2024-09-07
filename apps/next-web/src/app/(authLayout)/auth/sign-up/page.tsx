@@ -1,6 +1,5 @@
 'use client';
 
-import { PaletteMode } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
@@ -47,7 +46,7 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function SignIn() {
-  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const [mode, setMode] = React.useState<any>('light');
   const SignUpTheme = createTheme(getSignUpTheme(mode));
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');

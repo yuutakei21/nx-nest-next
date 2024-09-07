@@ -2,7 +2,7 @@ import React from 'react';
 
 import NotificationDropdown from './NotificationDropdown';
 import UserDropdown from './UserDropdown';
-import { Link } from '@mui/material';
+import { Link } from '@mui/material/Link';
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState('hidden');

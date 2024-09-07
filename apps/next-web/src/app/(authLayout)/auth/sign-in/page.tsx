@@ -1,6 +1,5 @@
 'use client';
 
-import { PaletteMode } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
@@ -14,10 +13,12 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
-import * as React from 'react';
+import { FormEvent, useState } from 'react';
 import getSignInTheme from '../../../providers/theme/getSignInTheme';
 import { SitemarkIcon } from '../components/CustomIcons';
 import ForgotPassword from '../components/ForgotPassword';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -43,18 +44,19 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
   padding: 20,
   backgroundImage: 'url(' + '/assets/img/bg_register2.jpg' + ')',
   // backgroundImage: 'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
-  backgroundSize: '100%',
+  backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
 }));
 
 export default function SignIn() {
-  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const [mode, setMode] = useState<any>('light');
   const SignInTheme = createTheme(getSignInTheme(mode));
-  const [emailError, setEmailError] = React.useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
-  const [passwordError, setPasswordError] = React.useState(false);
-  const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
-  const [open, setOpen] = React.useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
+  const [open, setOpen] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -64,7 +66,7 @@ export default function SignIn() {
     setOpen(false);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -154,19 +156,37 @@ export default function SignIn() {
                   Forgot your password?
                 </Link>
               </Box>
+
               <TextField
                 error={passwordError}
                 helperText={passwordErrorMessage}
-                name="password"
-                placeholder="••••••"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                color={passwordError ? 'error' : 'primary'}
                 autoFocus
                 required
                 fullWidth
                 variant="outlined"
-                color={passwordError ? 'error' : 'primary'}
+                name="password"
+                InputLabelProps={{ shrink: true }}
+                id="password"
+                autoComplete="current-password"
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => setShowPassword(!showPassword)}
+                        edge="end"
+                        className="!border-none !bg-transparent !hover:border-none !hover:bg-transparent"
+                      >
+                        {showPassword ? (
+                          <i className="fas fa-eye text-gray-400 text-sm" />
+                        ) : (
+                          <i className="fas fa-eye-slash text-gray-400 text-sm" />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
             </FormControl>
             <FormControlLabel

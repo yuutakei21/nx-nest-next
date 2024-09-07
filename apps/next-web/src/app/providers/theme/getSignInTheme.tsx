@@ -8,9 +8,8 @@ import {
   navigationCustomizations,
   surfacesCustomizations,
 } from './customizations';
-import { PaletteMode } from '@mui/material';
 
-export default function getSignInTheme(mode: PaletteMode): ThemeOptions {
+export default function getSignInTheme(mode: any): ThemeOptions {
   return {
     ...getDesignTokens(mode),
     components: {

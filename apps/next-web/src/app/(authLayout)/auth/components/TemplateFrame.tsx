@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   createTheme,
   ThemeProvider,
-  PaletteMode,
   styled,
 } from '@mui/material/styles';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -15,7 +14,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ToggleColorMode from './ToggleColorMode';
-import getSignInTheme from './theme/getSignInTheme';
+import getSignInTheme from '../../../providers/theme/getSignInTheme';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   position: 'relative',
@@ -35,7 +34,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 interface TemplateFrameProps {
   showCustomTheme: boolean;
   toggleCustomTheme: (theme: boolean) => void;
-  mode: PaletteMode;
+  mode: 'light';
   toggleColorMode: () => void;
   children: React.ReactNode;
 }

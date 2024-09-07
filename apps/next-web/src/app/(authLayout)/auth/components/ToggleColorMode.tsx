@@ -4,10 +4,9 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 
 import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
-import { PaletteMode } from '@mui/material';
 
 interface ToggleColorModeProps extends IconButtonProps {
-  mode: PaletteMode;
+  mode: 'light' | 'dark';
   toggleColorMode: () => void;
 }
 
