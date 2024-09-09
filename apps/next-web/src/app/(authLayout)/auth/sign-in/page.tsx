@@ -1,5 +1,9 @@
 'use client';
 
+import { SitemarkIcon } from '@/app/(AuthLayout)/auth/components/CustomIcons';
+import ForgotPassword from '@/app/(AuthLayout)/auth/components/ForgotPassword';
+import getSignInTheme from '@/app/providers/theme/getSignInTheme';
+import UIPasswordInput from '@/app/ui/molecules/UIPasswordInput';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
@@ -14,10 +18,6 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import { FormEvent, useState } from 'react';
-import getSignInTheme from '../../../providers/theme/getSignInTheme';
-import { SitemarkIcon } from '../components/CustomIcons';
-import ForgotPassword from '../components/ForgotPassword';
-import UIPasswordInput from '../../../ui/molecules/UIPasswordInput';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',

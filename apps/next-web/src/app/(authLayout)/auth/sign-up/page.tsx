@@ -14,9 +14,9 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import * as React from 'react';
-import { SitemarkIcon } from '../components/CustomIcons';
 import getSignUpTheme from '../../../providers/theme/getSignUpTheme';
 import UIPasswordInput from '../../../ui/molecules/UIPasswordInput';
+import { SitemarkIcon } from '../components/CustomIcons';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',

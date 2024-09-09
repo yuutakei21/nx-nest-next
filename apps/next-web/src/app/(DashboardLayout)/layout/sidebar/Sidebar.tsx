@@ -3,7 +3,7 @@ import SidebarItems from './SidebarItems';
 import { Upgrade } from './Updrade';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Sidebar } from 'react-mui-sidebar';
+import { Sidebar } from 'react-pro-sidebar';
 import Logo from '../shared/logo/Logo';
 
 interface ItemType {
@@ -64,11 +64,11 @@ const MSidebar = ({
           >
             <Sidebar
               width={'270px'}
-              collapsewidth="80px"
-              open={isSidebarOpen}
-              themeColor="#5d87ff"
-              themeSecondaryColor="#49beff"
-              showProfile={false}
+              collapsedWidth="80px"
+              collapsed={!isSidebarOpen}
+              // themeColor="#5d87ff"
+              // themeSecondaryColor="#49beff"
+              // showProfile={false}
             >
               {/* ------------------------------------------- */}
               {/* Logo */}
@@ -109,13 +109,11 @@ const MSidebar = ({
       <Box px={2}>
         <Sidebar
           width={'270px'}
-          collapsewidth="80px"
-          isCollapse={false}
-          mode="light"
-          direction="ltr"
-          themeColor="#5d87ff"
-          themeSecondaryColor="#49beff"
-          showProfile={false}
+          collapsedWidth="80px"
+          collapsed={false}
+          // themeColor="#5d87ff"
+          // themeSecondaryColor="#49beff"
+          // showProfile={false}
         >
           {/* ------------------------------------------- */}
           {/* Logo */}
