@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import {
-  Avatar,
-  Box,
-  Menu,
-  Button,
-  IconButton,
-  MenuItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import Link from 'next/link';
+import React, { useState } from 'react';
 
-import { IconListCheck, IconMail, IconUser } from "@tabler/icons-react";
+import ChecklistOutlinedIcon from '@mui/icons-material/ChecklistOutlined';
+import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import Button from '@mui/material/Button';
+
+
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -31,8 +33,8 @@ const Profile = () => {
         aria-controls="msgs-menu"
         aria-haspopup="true"
         sx={{
-          ...(typeof anchorEl2 === "object" && {
-            color: "primary.main",
+          ...(typeof anchorEl2 === 'object' && {
+            color: 'primary.main',
           }),
         }}
         onClick={handleClick2}
@@ -55,29 +57,29 @@ const Profile = () => {
         keepMounted
         open={Boolean(anchorEl2)}
         onClose={handleClose2}
-        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         sx={{
-          "& .MuiMenu-paper": {
-            width: "200px",
+          '& .MuiMenu-paper': {
+            width: '200px',
           },
         }}
       >
         <MenuItem>
           <ListItemIcon>
-            <IconUser width={20} />
+            <PersonOutlineOutlinedIcon width={20} />
           </ListItemIcon>
           <ListItemText>My Profile</ListItemText>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <IconMail width={20} />
+            <MailOutlineOutlinedIcon width={20} />
           </ListItemIcon>
           <ListItemText>My Account</ListItemText>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <IconListCheck width={20} />
+            <ChecklistOutlinedIcon width={20} />
           </ListItemIcon>
           <ListItemText>My Tasks</ListItemText>
         </MenuItem>

@@ -1,8 +1,10 @@
-import '../../global.css'
+import '../../global.css';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { useState } from 'react';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
 export type UIPasswordInputProps = TextFieldProps;
 
@@ -22,9 +24,12 @@ function UIPasswordInput(props: UIPasswordInputProps) {
               className="!border-none !bg-transparent !hover:border-none !hover:bg-transparent"
             >
               {showPassword ? (
-                <i className="fas fa-eye text-gray-400 text-sm" />
+                <VisibilityOutlinedIcon width={20} sx={{ color: '#9ca3af' }} />
               ) : (
-                <i className="fas fa-eye-slash text-gray-400 text-sm" />
+                <VisibilityOffOutlinedIcon
+                  width={20}
+                  sx={{ color: '#9ca3af' }}
+                />
               )}
             </IconButton>
           </InputAdornment>

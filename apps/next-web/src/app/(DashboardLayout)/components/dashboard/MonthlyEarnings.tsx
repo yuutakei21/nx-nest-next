@@ -5,10 +5,9 @@ import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-
-import { IconArrowDownRight, IconCurrencyDollar } from '@tabler/icons-react';
+import TrendingDownOutlinedIcon from '@mui/icons-material/TrendingDownOutlined';
 import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
-
+import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 const MonthlyEarnings = () => {
   // chart color
   const theme = useTheme();
@@ -60,7 +59,7 @@ const MonthlyEarnings = () => {
       title="Monthly Earnings"
       action={
         <Fab color="secondary" size="medium" sx={{ color: '#ffffff' }}>
-          <IconCurrencyDollar width={24} />
+          <PaidOutlinedIcon width={24} />
         </Fab>
       }
       footer={
@@ -79,7 +78,7 @@ const MonthlyEarnings = () => {
         </Typography>
         <Stack direction="row" spacing={1} my={1} alignItems="center">
           <Avatar sx={{ bgcolor: errorlight, width: 27, height: 27 }}>
-            <IconArrowDownRight width={20} color="#FA896B" />
+            <TrendingDownOutlinedIcon width={20} sx={{ color: '#FA896B' }} />
           </Avatar>
           <Typography variant="subtitle2" fontWeight="600">
             +9%

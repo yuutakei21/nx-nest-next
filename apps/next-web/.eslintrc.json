@@ -34,8 +34,7 @@
           "error",
           {
             "paths": [
-              "@mui/material",
-              "@mui/icons-material"
+              "@mui/material"
             ]
           }
         ]

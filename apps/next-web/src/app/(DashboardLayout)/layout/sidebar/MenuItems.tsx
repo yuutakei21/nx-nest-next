@@ -1,74 +1,72 @@
-import {
-  IconAperture,
-  IconCopy,
-  IconLayoutDashboard,
-  IconLogin,
-  IconMoodHappy,
-  IconTypography,
-  IconUserPlus,
-} from "@tabler/icons-react";
+import CameraOutlinedIcon from '@mui/icons-material/CameraOutlined';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import MoodOutlinedIcon from '@mui/icons-material/MoodOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 
-import { uniqueId } from "lodash";
+import { uniqueId } from 'lodash';
 
 const Menuitems = [
   {
     navlabel: true,
-    subheader: "Home",
+    subheader: 'Home',
   },
 
   {
     id: uniqueId(),
-    title: "Home",
-    icon: IconLayoutDashboard,
-    href: "/",
+    title: 'Dashboard',
+    icon: DashboardOutlinedIcon,
+    href: '/dashboard',
   },
   {
     navlabel: true,
-    subheader: "Utilities",
+    subheader: 'Utilities',
   },
   {
     id: uniqueId(),
-    title: "Typography",
-    icon: IconTypography,
-    href: "/utilities/typography",
+    title: 'Typography',
+    icon: TitleOutlinedIcon,
+    href: '/utilities/typography',
   },
   {
     id: uniqueId(),
-    title: "Shadow",
-    icon: IconCopy,
-    href: "/utilities/shadow",
+    title: 'Shadow',
+    icon: ContentCopyOutlinedIcon,
+    href: '/utilities/shadow',
   },
   {
     navlabel: true,
-    subheader: "Auth",
+    subheader: 'Auth',
   },
   {
     id: uniqueId(),
-    title: "Login",
-    icon: IconLogin,
-    href: "/auth/sign-in",
+    title: 'Login',
+    icon: LoginOutlinedIcon,
+    href: '/auth/sign-in',
   },
   {
     id: uniqueId(),
-    title: "Register",
-    icon: IconUserPlus,
-    href: "/auth/sign-up",
+    title: 'Register',
+    icon: PersonAddAltOutlinedIcon,
+    href: '/auth/sign-up',
   },
   {
     navlabel: true,
-    subheader: "Extra",
+    subheader: 'Extra',
   },
   {
     id: uniqueId(),
-    title: "Icons",
-    icon: IconMoodHappy,
-    href: "/icons",
+    title: 'Icons',
+    icon: MoodOutlinedIcon,
+    href: '/icons',
   },
   {
     id: uniqueId(),
-    title: "Sample Page",
-    icon: IconAperture,
-    href: "/sample-page",
+    title: 'Sample Page',
+    icon: CameraOutlinedIcon,
+    href: '/sample-page',
   },
 ];
 
