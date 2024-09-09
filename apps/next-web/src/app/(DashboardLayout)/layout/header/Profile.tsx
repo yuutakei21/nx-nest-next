@@ -13,8 +13,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 
-
-
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
   const handleClick2 = (event: any) => {
@@ -35,6 +33,7 @@ const Profile = () => {
         sx={{
           ...(typeof anchorEl2 === 'object' && {
             color: 'primary.main',
+            padding: '4px',
           }),
         }}
         onClick={handleClick2}
