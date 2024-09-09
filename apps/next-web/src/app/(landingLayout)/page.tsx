@@ -1,11 +1,28 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import { TwitterIcon } from '@/app/ui/icons/TwitterIcon';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 
+import {
+  default as Fingerprint,
+  default as FingerprintIcon,
+} from '@mui/icons-material/Fingerprint';
+import GoogleIcon from '@mui/icons-material/Google';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import HtmlOutlinedIcon from '@mui/icons-material/HtmlOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import MilitaryTechOutlinedIcon from '@mui/icons-material/MilitaryTechOutlined';
+import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import SportsBasketballOutlinedIcon from '@mui/icons-material/SportsBasketballOutlined';
+import SyncIcon from '@mui/icons-material/Sync';
 import React from 'react';
-
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import PollIcon from '@mui/icons-material/Poll';
 
 export default function Landing() {
   return (
@@ -74,7 +91,8 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className="fas fa-award"></i>
+                      {/* <i className="fas fa-award"></i> */}
+                      <MilitaryTechOutlinedIcon />
                     </div>
                     <h6 className="text-xl font-semibold">Awarded Agency</h6>
                     <p className="mt-2 mb-4 text-gray-600">
@@ -89,7 +107,8 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-                      <i className="fas fa-retweet"></i>
+                      {/* <i className="fas fa-retweet"></i> */}
+                      <SyncIcon />
                     </div>
                     <h6 className="text-xl font-semibold">Free Revisions</h6>
                     <p className="mt-2 mb-4 text-gray-600">
@@ -104,7 +123,8 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
-                      <i className="fas fa-fingerprint"></i>
+                      {/* <i className="fas fa-fingerprint"></i> */}
+                      <FingerprintIcon />
                     </div>
                     <h6 className="text-xl font-semibold">Verified Company</h6>
                     <p className="mt-2 mb-4 text-gray-600">
@@ -119,7 +139,8 @@ export default function Landing() {
             <div className="flex flex-wrap items-center mt-32">
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
                 <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
-                  <i className="fas fa-user-friends text-xl"></i>
+                  {/* <i className="fas fa-user-friends text-xl"></i> */}
+                  <GroupOutlinedIcon />
                 </div>
                 <h3 className="text-3xl mb-2 font-semibold leading-normal">
                   Working with us is a pleasure
@@ -214,7 +235,8 @@ export default function Landing() {
               <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                 <div className="md:pr-12">
                   <div className="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
-                    <i className="fas fa-rocket text-xl"></i>
+                    {/* <i className="fas fa-rocket text-xl"></i> */}
+                    <RocketLaunchOutlinedIcon />
                   </div>
                   <h3 className="text-3xl font-semibold">A growing company</h3>
                   <p className="mt-4 text-lg leading-relaxed text-gray-600">
@@ -227,7 +249,8 @@ export default function Landing() {
                       <div className="flex items-center">
                         <div>
                           <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
-                            <i className="fas fa-fingerprint"></i>
+                            {/* <i className="fas fa-fingerprint"></i> */}
+                            <Fingerprint />
                           </span>
                         </div>
                         <div>
@@ -241,7 +264,8 @@ export default function Landing() {
                       <div className="flex items-center">
                         <div>
                           <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
-                            <i className="fab fa-html5"></i>
+                            {/* <i className="fab fa-html5"></i> */}
+                            <HtmlOutlinedIcon />
                           </span>
                         </div>
                         <div>
@@ -255,7 +279,10 @@ export default function Landing() {
                       <div className="flex items-center">
                         <div>
                           <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
-                            <i className="far fa-paper-plane"></i>
+                            {/* <i className="far fa-paper-plane"></i> */}
+                            <SendOutlinedIcon
+                              sx={{ transform: 'rotate(-30deg)' }}
+                            />
                           </span>
                         </div>
                         <div>
@@ -301,19 +328,22 @@ export default function Landing() {
                         className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-twitter"></i>
+                        {/* <i className="fab fa-twitter"></i> */}
+                        <TwitterIcon />
                       </button>
                       <button
                         className="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-facebook-f"></i>
+                        {/* <i className="fab fa-facebook-f"></i> */}
+                        <FacebookOutlinedIcon />
                       </button>
                       <button
                         className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-dribbble"></i>
+                        {/* <i className="fab fa-dribbble"></i> */}
+                        <SportsBasketballOutlinedIcon />
                       </button>
                     </div>
                   </div>
@@ -337,13 +367,15 @@ export default function Landing() {
                         className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-google"></i>
+                        {/* <i className="fab fa-google"></i> */}
+                        <GoogleIcon />
                       </button>
                       <button
                         className="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-facebook-f"></i>
+                        {/* <i className="fab fa-facebook-f"></i> */}
+                        <FacebookOutlinedIcon />
                       </button>
                     </div>
                   </div>
@@ -367,19 +399,22 @@ export default function Landing() {
                         className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-google"></i>
+                        {/* <i className="fab fa-google"></i> */}
+                        <GoogleIcon />
                       </button>
                       <button
                         className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-twitter"></i>
+                        {/* <i className="fab fa-twitter"></i> */}
+                        <TwitterIcon />
                       </button>
                       <button
                         className="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-instagram"></i>
+                        {/* <i className="fab fa-instagram"></i> */}
+                        <InstagramIcon />
                       </button>
                     </div>
                   </div>
@@ -403,25 +438,29 @@ export default function Landing() {
                         className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-dribbble"></i>
+                        {/* <i className="fab fa-dribbble"></i> */}
+                        <SportsBasketballOutlinedIcon />
                       </button>
                       <button
                         className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-google"></i>
+                        {/* <i className="fab fa-google"></i> */}
+                        <GoogleIcon />
                       </button>
                       <button
                         className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-twitter"></i>
+                        {/* <i className="fab fa-twitter"></i> */}
+                        <TwitterIcon />
                       </button>
                       <button
                         className="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                       >
-                        <i className="fab fa-instagram"></i>
+                        {/* <i className="fab fa-instagram"></i> */}
+                        <InstagramIcon />
                       </button>
                     </div>
                   </div>
@@ -468,7 +507,8 @@ export default function Landing() {
             <div className="flex flex-wrap mt-12 justify-center">
               <div className="w-full lg:w-3/12 px-4 text-center">
                 <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-medal text-xl"></i>
+                  {/* <i className="fas fa-medal text-xl"></i> */}
+                  <WorkspacePremiumIcon />
                 </div>
                 <h6 className="text-xl mt-5 font-semibold text-white">
                   Excelent Services
@@ -480,7 +520,8 @@ export default function Landing() {
               </div>
               <div className="w-full lg:w-3/12 px-4 text-center">
                 <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-poll text-xl"></i>
+                  {/* <i className="fas fa-poll text-xl"></i> */}
+                  <PollIcon />
                 </div>
                 <h5 className="text-xl mt-5 font-semibold text-white">
                   Grow your market
@@ -492,7 +533,8 @@ export default function Landing() {
               </div>
               <div className="w-full lg:w-3/12 px-4 text-center">
                 <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-lightbulb text-xl"></i>
+                  {/* <i className="fas fa-lightbulb text-xl"></i> */}
+                  <LightbulbOutlinedIcon />
                 </div>
                 <h5 className="text-xl mt-5 font-semibold text-white">
                   Launch time
