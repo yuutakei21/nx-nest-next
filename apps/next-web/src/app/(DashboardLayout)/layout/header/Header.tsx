@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
@@ -22,7 +23,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
-  const AppBarStyled = styled(AppBar)(({ theme }) => ({
+  const AppBarStyled = styled(AppBar)(({ theme }: any) => ({
     boxShadow: 'none',
     background: theme.palette.background.paper,
     justifyContent: 'center',
@@ -31,7 +32,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
       minHeight: '70px',
     },
   }));
-  const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
+  const ToolbarStyled = styled(Toolbar)(({ theme }: any) => ({
     width: '100%',
     color: theme.palette.text.secondary,
   }));
@@ -40,6 +41,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
     <AppBarStyled position="sticky" color="default">
       <ToolbarStyled>
         <IconButton
+          size="large"
           color="inherit"
           aria-label="menu"
           onClick={toggleMobileSidebar}
@@ -47,10 +49,12 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
             display: {
               lg: 'none',
               xs: 'inline',
+              padding: '1px 10px',
+              marginRight: '4px'
             },
           }}
         >
-          <MenuOutlinedIcon width="20" height="20" />
+          <MenuOutlinedIcon sx={{ fontSize: 21, stroke: 1.5 }} />
         </IconButton>
 
         <IconButton
