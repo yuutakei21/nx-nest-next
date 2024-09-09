@@ -17,8 +17,7 @@ import { FormEvent, useState } from 'react';
 import getSignInTheme from '../../../providers/theme/getSignInTheme';
 import { SitemarkIcon } from '../components/CustomIcons';
 import ForgotPassword from '../components/ForgotPassword';
-import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
+import UIPasswordInput from '../../../ui/molecules/UIPasswordInput';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -49,14 +48,12 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function SignIn() {
-  const [mode, setMode] = useState<any>('light');
-  const SignInTheme = createTheme(getSignInTheme(mode));
+  const SignInTheme = createTheme(getSignInTheme('light'));
   const [emailError, setEmailError] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -156,8 +153,7 @@ export default function SignIn() {
                   Forgot your password?
                 </Link>
               </Box>
-
-              <TextField
+              <UIPasswordInput
                 error={passwordError}
                 helperText={passwordErrorMessage}
                 color={passwordError ? 'error' : 'primary'}
@@ -169,24 +165,6 @@ export default function SignIn() {
                 InputLabelProps={{ shrink: true }}
                 id="password"
                 autoComplete="current-password"
-                type={showPassword ? 'text' : 'password'}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowPassword(!showPassword)}
-                        edge="end"
-                        className="!border-none !bg-transparent !hover:border-none !hover:bg-transparent"
-                      >
-                        {showPassword ? (
-                          <i className="fas fa-eye text-gray-400 text-sm" />
-                        ) : (
-                          <i className="fas fa-eye-slash text-gray-400 text-sm" />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
               />
             </FormControl>
             <FormControlLabel
@@ -206,7 +184,7 @@ export default function SignIn() {
               Don&apos;t have an account?{' '}
               <span>
                 <Link
-                  href="/material-ui/getting-started/templates/sign-in/"
+                  href="/auth/sign-up/"
                   variant="body2"
                   sx={{ alignSelf: 'center' }}
                 >

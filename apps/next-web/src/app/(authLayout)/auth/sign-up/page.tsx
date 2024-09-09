@@ -14,9 +14,9 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import * as React from 'react';
-import getSignInTheme from '../../../providers/theme/getSignInTheme';
 import { SitemarkIcon } from '../components/CustomIcons';
 import getSignUpTheme from '../../../providers/theme/getSignUpTheme';
+import UIPasswordInput from '../../../ui/molecules/UIPasswordInput';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -159,7 +159,7 @@ export default function SignIn() {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="password">Password</FormLabel>
-                <TextField
+                <UIPasswordInput
                   required
                   fullWidth
                   name="password"
@@ -189,7 +189,7 @@ export default function SignIn() {
                 Already have an account?{' '}
                 <span>
                   <Link
-                    href="/material-ui/getting-started/templates/sign-in/"
+                    href="/auth/sign-in/"
                     variant="body2"
                     sx={{ alignSelf: 'center' }}
                   >

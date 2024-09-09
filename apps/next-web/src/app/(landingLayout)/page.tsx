@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-"use client"
+'use client';
 
 import React from 'react';
 
@@ -555,8 +556,8 @@ export default function Landing() {
                         Message
                       </label>
                       <textarea
-                        rows="4"
-                        cols="80"
+                        rows={4}
+                        cols={80}
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Type a message..."
                       />
