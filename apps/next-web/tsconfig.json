@@ -16,7 +16,11 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@": ["apps/next-web/src"],
+      "@/*": ["apps/next-web/src/*"],
+    }
   },
   "include": [
     "**/*.ts",
