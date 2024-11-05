@@ -1,0 +1,2377 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>TYPING TEST</title>
+    <meta name="description" content="dummy test">
+    <meta name="keywords" content="typing">
+   
+    <script>
+        function submitTest() {
+            let sections = document.getElementsByTagName('section') 
+            let resultData = sections[0].getElementsByClassName('result_data')
+            console.log(resultData)
+            let typeRank = resultData[0].children[0].children[1].children[1].textContent
+            console.log(typeRank)
+            let inputRank = document.getElementById('type-rank')
+            inputRank.value = typeRank
+        }
+    </script>
+    <style>
+        @charset "UTF-8";
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            font-family: "Hiragino Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Sans W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+            color: #636363;
+            -webkit-user-select: none;
+            touch-action: none;
+        }
+
+        header,
+        nav,
+        section,
+        article,
+        main,
+        footer {
+            display: block;
+        }
+
+        a {
+            color: #027fff;
+            text-decoration: none;
+        }
+
+        a img {
+            border-style: none;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.disc {
+            list-style-type: disc;
+            margin-left: 18px;
+        }
+
+        ol {
+            margin-left: 18px;
+        }
+
+        img.left {
+            float: left;
+            margin: 0 12px 12px 0;
+        }
+
+        img.right {
+            float: right;
+            margin: 0 0 12px 12px;
+        }
+
+        img.center {
+            display: block;
+            margin: 0 auto;
+        }
+
+        em {
+            color: #ff9c00;
+            font-style: normal;
+        }
+
+        strong {
+            color: #ff9c00;
+        }
+
+        p {
+            margin: 0 0 18px;
+        }
+
+        p:last-child {
+            margin: 0;
+        }
+
+        input[type="text"],
+        input[type="image"] {
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        #app {
+            width: 728px;
+            height: 470px;
+            margin: 0 auto;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #engine {
+            position: absolute;
+        }
+
+        #start_view {
+            width: 728px;
+            height: 470px;
+            text-align: center;
+        }
+
+        #start_view .title {
+            font-size: 24px;
+            padding: 160px 24px 0;
+            color: #636363;
+        }
+
+        #start_view .explain {
+            font-size: 15px;
+            padding: 0 24px;
+            color: #636363;
+            margin: 12px 0 74px;
+        }
+
+        #start_view #start_btn {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #057fff;
+            width: 160px;
+            height: 45px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 45px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        #start_view #func_view {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 26px;
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            border: 1px solid #d9d9d9;
+            line-height: 26px;
+            padding: 0 12px;
+            white-space: nowrap;
+        }
+
+        #start_view #func_view>span {
+            display: inline-block;
+            margin-right: 4px;
+            font-size: 11px;
+        }
+
+        #start_view #func_view .switch_btn {
+            width: 36px;
+            height: 16px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            margin-right: 18px;
+            overflow: hidden;
+        }
+
+        #start_view #func_view .switch_btn:last-child {
+            margin-right: 0;
+        }
+
+        #start_view #func_view .switch_btn .btn {
+            width: 36px;
+            height: 16px;
+            border-radius: 3px;
+            overflow: hidden;
+            line-height: 16px;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            display: none;
+        }
+
+        #start_view #func_view .switch_btn .btn.on_btn {
+            background-color: #2a89ff;
+        }
+
+        #start_view #func_view .switch_btn .btn.off_btn {
+            background-color: #ff4032;
+        }
+
+        #start_view #func_view .switch_btn .btn.fixed {
+            background-color: #999999;
+        }
+
+        #countdown {
+            color: #ff9c00;
+            width: 608px;
+            height: 172px;
+            font-size: 80px;
+            line-height: 172px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #example_container {
+            width: 608px;
+            height: 172px;
+            margin: 0 auto 10px;
+            border: 1px solid #d8d8d8;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #example_container #start_msg {
+            font-size: 14px;
+            text-align: center;
+            width: 608px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 46px;
+            line-height: 160%;
+        }
+
+        #example_container #start_msg p {
+            margin: 0 0 4px;
+            padding: 0;
+        }
+
+        #example_container #start_msg em {
+            font-size: 24px;
+        }
+
+        #example_container #progress_bar,
+        #example_container #timelimit_bar {
+            position: absolute;
+            bottom: 1px;
+            left: 4px;
+            background-color: #bcbcbc;
+            width: 598px;
+            height: 4px;
+        }
+
+        #example_container #timelimit_bar {
+            animation-timing-function: linear;
+        }
+
+        #example_container .entered {
+            color: #ffd0a6;
+        }
+
+        #example_container .entered u {
+            color: #ffd0a6;
+        }
+
+        #exampleText {
+            position: absolute;
+            left: 15px;
+            top: 36px;
+            width: 580px;
+            height: 36px;
+            font-size: 30px;
+            line-height: 36px;
+            overflow: hidden;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #exampleText>div {
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+        }
+
+        #kanaText {
+            position: absolute;
+            left: 15px;
+            top: 73px;
+            width: 580px;
+            height: 24px;
+            font-size: 20px;
+            line-height: 24px;
+            overflow: hidden;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #kanaText>div {
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+        }
+
+        #sentenceText {
+            position: absolute;
+            left: 15px;
+            top: 102px;
+            width: 580px;
+            height: 30px;
+            font-size: 26px;
+            line-height: 26px;
+            overflow: hidden;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #sentenceText>div {
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+        }
+
+        #sentenceText>div u {
+            display: inline-block;
+            text-decoration: none;
+            transform: scale(0.6, 1);
+            transform-origin: top left;
+            color: #d0d0d0;
+            letter-spacing: -0.4em;
+        }
+
+        #miss_type_screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 608px;
+            height: 172px;
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .long_typing #example_container {
+            width: 608px;
+            height: 371px;
+            margin: 0 auto 5px;
+        }
+
+        .long_typing #example_container #start_msg {
+            padding-top: 136px;
+        }
+
+        .long_typing #example_container #countdown {
+            height: 351px;
+            line-height: 351px;
+        }
+
+        .long_typing #example_container #exampleText {
+            width: 590px;
+            height: 351px;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+        }
+
+        .long_typing #example_container #exampleText>div {
+            height: auto;
+        }
+
+        .long_typing #second_container {
+            width: 608px;
+            height: 90px;
+            margin: 0 auto;
+            border: 1px solid #d8d8d8;
+            position: relative;
+        }
+
+        .long_typing #exampleText>div {
+            white-space: pre-wrap;
+        }
+
+        .long_typing #kanaText {
+            top: 20px;
+        }
+
+        .long_typing #sentenceText {
+            top: 48px;
+        }
+
+        .long_typing .entered {
+            color: #ffd0a6;
+        }
+
+        .long_typing #miss_type_screen {
+            height: 371px;
+        }
+
+        .eng_long #sentenceText {
+            top: 70px;
+        }
+
+        .tenkey #exampleText>div,
+        .tenkey #sentenceText>div {
+            text-align: right;
+            width: 100%;
+        }
+
+        .tenkey #sentenceText {
+            height: 40px;
+            font-size: 36px;
+            line-height: 36px;
+        }
+
+        .tenkey.none_kana #exampleText {
+            top: 50px;
+        }
+
+        .tenkey.none_kana #sentenceText {
+            top: 92px;
+        }
+
+        .tenkey.none_kana.none_example #sentenceText {
+            top: 64px;
+        }
+
+        .single_key #exampleText {
+            font-size: 40px;
+            height: 46px;
+            line-height: 46px;
+            top: 58px;
+        }
+
+        .single_key #exampleText>div {
+            text-align: center;
+            width: 100%;
+            height: 46px;
+        }
+
+        #result {
+            width: 728px;
+            height: 420px;
+        }
+
+        #result article {
+            width: 728px;
+            height: 420px;
+            position: relative;
+        }
+
+        #result article section {
+            position: relative;
+        }
+
+        #result article h1 {
+            height: 36px;
+            font-size: 15px;
+            line-height: 36px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 0 0 10px;
+        }
+
+        #result #current {
+            width: 588px;
+            height: 335px;
+            border: 1px solid #d0d0d0;
+            float: left;
+            margin: 0 0 12px;
+        }
+
+        #result #current h1 {
+            color: #027fff;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        #result #exampleList {
+            position: absolute;
+            top: 49px;
+            left: 12px;
+            width: 354px;
+            height: 252px;
+            padding: 10px;
+            overflow: auto;
+            border: 1px solid #d0d0d0;
+        }
+
+        #result #exampleList ul {
+            width: 354px;
+        }
+
+        #result #exampleList ul li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        #result #exampleList .miss {
+            color: #f00;
+        }
+
+        #result .result_data {
+            width: 166px;
+            height: 286px;
+            position: absolute;
+            top: 37px;
+            right: 0;
+            padding: 12px 11px 0 11px;
+            background-color: #f7f7f7;
+        }
+
+        #result .result_data ul {
+            width: 166px;
+        }
+
+        #result .result_data ul li {
+            border-bottom: 1px solid #d0d0d0;
+            position: relative;
+        }
+
+        #result .result_data ul li .title {
+            font-size: 11px;
+            height: 32px;
+            line-height: 32px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #result .result_data ul li .data {
+            color: #027fff;
+            font-size: 14px;
+            height: 32px;
+            line-height: 32px;
+            width: 160px;
+            text-align: right;
+            font-weight: bold;
+            padding-right: 6px;
+        }
+
+        #result #prev {
+            width: 137px;
+            height: 335px;
+            float: right;
+            border-top: 1px solid #d0d0d0;
+            border-right: 1px solid #d0d0d0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        #result #prev h1 {
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        #result #prev .result_data {
+            width: 115px;
+        }
+
+        #result #prev .result_data ul {
+            width: 115px;
+        }
+
+        #result #prev .result_data ul li .data {
+            width: 109px;
+        }
+
+        #result #comment {
+            width: 726px;
+            height: 51px;
+            border: 1px solid #d0d0d0;
+            text-align: center;
+            position: relative;
+            margin: 12px 0 0;
+            clear: both;
+        }
+
+        #result #comment .container {
+            position: absolute;
+            width: 690px;
+            padding: 0 18px;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            font-size: 14px;
+        }
+
+        #result #btn_area {
+            position: relative;
+        }
+
+        #result .btn {
+            display: block;
+            width: 129px;
+            height: 39px;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 39px;
+            overflow: hidden;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        #result #twitter_btn {
+            width: 118px;
+            height: 28px;
+            color: #fff;
+            font-size: 13px;
+            line-height: 28px;
+            background: #55acee;
+            text-align: center;
+            top: 6px;
+            left: 0;
+        }
+
+        #result #twitter_btn:before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 28px;
+            background: url("../images/twitter.svg") center center no-repeat;
+            margin: 0 6px 0 0;
+            vertical-align: middle;
+        }
+
+        #result #replay_btn {
+            background-color: #027fff;
+            top: 0;
+            right: 289px;
+        }
+
+        #result #regist_btn {
+            background-color: #ff9800;
+            top: 0;
+            right: 146px;
+        }
+
+        #result #regist_btn.off {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        #result #miss_only_btn {
+            background-color: #23c21f;
+            top: 0;
+            left: 164px;
+        }
+
+        #result #close_btn {
+            color: #7b7a7a;
+            background-color: #f4f5f5;
+            top: 0;
+            right: 0;
+        }
+
+        #result #error_view #error_view_retry_btn {
+            background-color: #027fff;
+            position: static;
+        }
+
+        #error_view {
+            padding: 200px 0 0;
+        }
+
+        #error_view .title {
+            font-size: 20px;
+            color: #636363;
+            text-align: center;
+            margin: 0 20px 48px;
+        }
+
+        #error_view .btn {
+            display: block;
+            width: 154px;
+            height: 52px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            line-height: 52px;
+            overflow: hidden;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        #error_view #retry_btn {
+            background-color: #027fff;
+            margin-bottom: 24px;
+        }
+
+        #error_view #back_btn {
+            color: #7b7a7a;
+            background-color: #f4f5f5;
+        }
+
+        #dummy_plug {
+            background: rgba(255, 0, 0, 0.6);
+            color: #fff;
+            font-size: 14px;
+            padding: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+        }
+
+        .loader {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            border-top: 3px solid rgba(255, 255, 255, 0.2);
+            border-right: 3px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+            border-left: 3px solid #ffffff;
+            -webkit-animation: rotate 1.0s infinite linear;
+            animation: rotate 1.0s infinite linear;
+            z-index: 10000;
+            box-sizing: border-box;
+        }
+
+        .loader,
+        .loader:after {
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+
+        .loader.on {
+            display: block;
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes time_limit_bar {
+            0% {
+                width: 580px;
+            }
+
+            100% {
+                width: 0px;
+            }
+        }
+
+        #overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: 0.4s;
+            visibility: hidden;
+            z-index: 4999;
+        }
+
+        #overlay.on {
+            opacity: 1.0;
+            visibility: visible;
+        }
+
+        /* stylelint-disable order/properties-alphabetical-order */
+        /* stylelint-enable */
+        #dialog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s;
+            visibility: hidden;
+            z-index: 5000;
+        }
+
+        #dialog.on {
+            opacity: 1.0;
+            visibility: visible;
+        }
+
+        #dialog .msg {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 50px;
+            padding: 180px 0 0;
+        }
+
+        #dialog .btn {
+            width: 124px;
+            height: 42px;
+            color: #fff;
+            text-align: center;
+            display: block;
+            font-size: 16px;
+            line-height: 42px;
+            overflow: hidden;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.24);
+        }
+
+        #dialog #dialog_btns {
+            width: 272px;
+            height: 42px;
+            margin: 0 auto;
+        }
+
+        #dialog #dialog_btns.single {
+            width: 124px;
+        }
+
+        #dialog #dialog_btns .closeBtn {
+            color: #7b7a7a;
+            background-color: #f0f1f1;
+            float: right;
+        }
+
+        #dialog #dialog_btns .okBtn {
+            background-color: #0b81ff;
+            float: right;
+        }
+
+        #dialog #dialog_btns .yesBtn {
+            background-color: #0b81ff;
+            float: left;
+        }
+
+        #dialog #dialog_btns .entryBtn {
+            background-color: #ff9800;
+            float: left;
+        }
+
+        #dialog #dialog_btns .cancelBtn {
+            background-color: #e23232;
+            float: right;
+        }
+
+        #dialog #confirmEntryRankingDialog4Visitor {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            padding: 100px 0 0;
+        }
+
+        #dialog #confirmEntryRankingDialog4Visitor .msg {
+            padding: 0;
+        }
+
+        #dialog #confirmEntryRankingDialog4Visitor .form {
+            width: 280px;
+            margin: 0 auto 24px;
+        }
+
+        #dialog #confirmEntryRankingDialog4Visitor input {
+            padding: 8px;
+            font-size: 14px;
+            border: none;
+            display: block;
+            width: 266px;
+            margin: 0 0 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #484848;
+            color: #fff;
+            padding: 6px;
+            transition: 0.3s;
+        }
+
+        #dialog #confirmEntryRankingDialog4Visitor input.error {
+            background: #f00;
+            border: 1px solid #f00;
+        }
+
+        /* stylelint-disable order/properties-alphabetical-order */
+        /* stylelint-enable */
+        #hands {
+            width: 490px;
+            height: 75px;
+            position: absolute;
+            bottom: 0;
+            left: 119px;
+        }
+
+        #hands .finger {
+            width: 42px;
+            height: 75px;
+            background-color: #d8d8d8;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 21px 21px 0 0;
+        }
+
+        #hands .finger.little {
+            height: 55px;
+        }
+
+        #hands .finger.thumb {
+            height: 35px;
+        }
+
+        #hands .finger.on {
+            background-color: #ff9c00;
+        }
+
+        #hands .left.ring {
+            left: 47px;
+        }
+
+        #hands .left.middle {
+            left: 94px;
+        }
+
+        #hands .left.index {
+            left: 141px;
+        }
+
+        #hands .left.thumb {
+            left: 188px;
+        }
+
+        #hands .right.thumb {
+            left: 260px;
+        }
+
+        #hands .right.index {
+            left: 307px;
+        }
+
+        #hands .right.middle {
+            left: 354px;
+        }
+
+        #hands .right.ring {
+            left: 401px;
+        }
+
+        #hands .right.little {
+            left: 448px;
+        }
+
+        #virtual_keyboard {
+            width: 610px;
+            margin: 0 auto;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard {
+            position: relative;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #d8d8d8;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 34px;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_49 {
+            left: 41px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_50 {
+            left: 82px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_51 {
+            left: 123px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_52 {
+            left: 164px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_53 {
+            left: 205px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_54 {
+            left: 246px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_55 {
+            left: 287px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_56 {
+            left: 328px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_57 {
+            left: 369px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_48 {
+            left: 410px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_189 {
+            left: 451px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_q {
+            left: 61px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_w {
+            left: 102px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_e {
+            left: 143px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_r {
+            left: 184px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_t {
+            left: 225px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_y {
+            left: 266px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_u {
+            left: 307px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_i {
+            left: 348px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_o {
+            left: 389px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_p {
+            left: 430px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_192 {
+            left: 471px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_a {
+            left: 81px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_s {
+            left: 122px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_d {
+            left: 163px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_f {
+            left: 204px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_g {
+            left: 245px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_h {
+            left: 286px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_j {
+            left: 327px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_k {
+            left: 368px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_l {
+            left: 409px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_187 {
+            left: 450px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_186 {
+            left: 491px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_z {
+            left: 101px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_x {
+            left: 142px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_c {
+            left: 183px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_v {
+            left: 224px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_b {
+            left: 265px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_n {
+            left: 306px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_m {
+            left: 347px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_comma {
+            left: 388px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_dot {
+            left: 429px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_191 {
+            left: 470px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_shift_left {
+            width: 96px;
+            left: 0px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_shift_right {
+            width: 58px;
+            left: 552px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_space {
+            width: 179px;
+            left: 184px;
+            top: 164px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.active {
+            background-color: #ff9c00 !important;
+            border-color: #ff9c00 !important;
+            color: #fff !important;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_13 {
+            width: 57px;
+            height: 77px;
+            top: 41px;
+            left: 553px;
+            background: url("../images/enter.svg") no-repeat;
+            background-size: 100% 100%;
+            border: none;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_222 {
+            left: 492px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_yen {
+            left: 533px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_8 {
+            left: 574px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_219 {
+            left: 512px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_221 {
+            left: 532px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_226 {
+            left: 511px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_9 {
+            width: 54px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_20 {
+            width: 76px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_17_left {
+            width: 54px;
+            top: 164px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_91_left {
+            top: 164px;
+            left: 61px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_18_left {
+            top: 164px;
+            left: 102px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_29 {
+            top: 164px;
+            left: 143px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_28 {
+            top: 164px;
+            left: 370px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_242 {
+            top: 164px;
+            left: 411px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_18_right {
+            width: 54px;
+            top: 164px;
+            left: 452px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_91_right {
+            top: 164px;
+            left: 513px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_17_right {
+            width: 56px;
+            top: 164px;
+            left: 554px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.right {
+            background-color: #eee;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.little.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.little.right {
+            background-color: #e1f7e1;
+            border-color: #92e390;
+            color: #3bcc37;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.right {
+            background-color: #e0f6f0;
+            border-color: #90e3cd;
+            color: #37cca5;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.middle.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.middle.right {
+            background-color: #e0f3f6;
+            border-color: #95dce7;
+            color: #39bfd4;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.index.left {
+            background-color: #e0ebf7;
+            border-color: #95bee7;
+            color: #3a86d3;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.index.right {
+            background-color: #f7e0f7;
+            border-color: #e593e6;
+            color: #d151d3;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.key_f:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -5px;
+            width: 10px;
+            height: 2px;
+            border-radius: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.key_j:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -5px;
+            width: 10px;
+            height: 2px;
+            border-radius: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard {
+            position: relative;
+            width: 159px;
+            margin: 0 0 0 auto;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #d8d8d8;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 34px;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_48 {
+            top: 164px;
+            left: 0;
+            width: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_49 {
+            top: 123px;
+            left: 0;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_50 {
+            top: 123px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_51 {
+            top: 123px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_52 {
+            top: 82px;
+            left: 0px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_53 {
+            top: 82px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_54 {
+            top: 82px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_55 {
+            top: 41px;
+            left: 0px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_56 {
+            top: 41px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_57 {
+            top: 41px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_47 {
+            top: 0;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_42 {
+            top: 0;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_45 {
+            top: 0;
+            left: 123px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_46 {
+            top: 164px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_43 {
+            top: 41px;
+            left: 123px;
+            height: 75px;
+            line-height: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div#key_13 {
+            top: 123px;
+            left: 123px;
+            height: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div#key_144 {
+            top: 0;
+            left: 0;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.active {
+            background-color: #ff9c00 !important;
+            border-color: #ff9c00 !important;
+            color: #fff !important;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.deco_key {
+            box-shadow: none;
+        }
+
+        /* stylelint-disable order/properties-alphabetical-order */
+        /* stylelint-enable */
+        #hands {
+            width: 490px;
+            height: 75px;
+            position: absolute;
+            bottom: 0;
+            left: 119px;
+        }
+
+        #hands .finger {
+            width: 42px;
+            height: 75px;
+            background-color: #d8d8d8;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 21px 21px 0 0;
+        }
+
+        #hands .finger.little {
+            height: 55px;
+        }
+
+        #hands .finger.thumb {
+            height: 35px;
+        }
+
+        #hands .finger.on {
+            background-color: #ff9c00;
+        }
+
+        #hands .left.ring {
+            left: 47px;
+        }
+
+        #hands .left.middle {
+            left: 94px;
+        }
+
+        #hands .left.index {
+            left: 141px;
+        }
+
+        #hands .left.thumb {
+            left: 188px;
+        }
+
+        #hands .right.thumb {
+            left: 260px;
+        }
+
+        #hands .right.index {
+            left: 307px;
+        }
+
+        #hands .right.middle {
+            left: 354px;
+        }
+
+        #hands .right.ring {
+            left: 401px;
+        }
+
+        #hands .right.little {
+            left: 448px;
+        }
+
+        #virtual_keyboard {
+            width: 610px;
+            margin: 0 auto;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard {
+            position: relative;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #d8d8d8;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 34px;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_49 {
+            left: 41px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_50 {
+            left: 82px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_51 {
+            left: 123px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_52 {
+            left: 164px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_53 {
+            left: 205px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_54 {
+            left: 246px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_55 {
+            left: 287px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_56 {
+            left: 328px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_57 {
+            left: 369px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_48 {
+            left: 410px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_189 {
+            left: 451px;
+            top: 0;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_q {
+            left: 61px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_w {
+            left: 102px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_e {
+            left: 143px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_r {
+            left: 184px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_t {
+            left: 225px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_y {
+            left: 266px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_u {
+            left: 307px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_i {
+            left: 348px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_o {
+            left: 389px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_p {
+            left: 430px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_192 {
+            left: 471px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_a {
+            left: 81px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_s {
+            left: 122px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_d {
+            left: 163px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_f {
+            left: 204px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_g {
+            left: 245px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_h {
+            left: 286px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_j {
+            left: 327px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_k {
+            left: 368px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_l {
+            left: 409px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_187 {
+            left: 450px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_186 {
+            left: 491px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_z {
+            left: 101px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_x {
+            left: 142px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_c {
+            left: 183px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_v {
+            left: 224px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_b {
+            left: 265px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_n {
+            left: 306px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_m {
+            left: 347px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_comma {
+            left: 388px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_dot {
+            left: 429px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_191 {
+            left: 470px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_shift_left {
+            width: 96px;
+            left: 0px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_shift_right {
+            width: 58px;
+            left: 552px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.key_space {
+            width: 179px;
+            left: 184px;
+            top: 164px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div.active {
+            background-color: #ff9c00 !important;
+            border-color: #ff9c00 !important;
+            color: #fff !important;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_13 {
+            width: 57px;
+            height: 77px;
+            top: 41px;
+            left: 553px;
+            background: url("../images/enter.svg") no-repeat;
+            background-size: 100% 100%;
+            border: none;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_222 {
+            left: 492px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_yen {
+            left: 533px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_8 {
+            left: 574px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_219 {
+            left: 512px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_221 {
+            left: 532px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_226 {
+            left: 511px;
+            top: 123px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_9 {
+            width: 54px;
+            top: 41px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_20 {
+            width: 76px;
+            top: 82px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_17_left {
+            width: 54px;
+            top: 164px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_91_left {
+            top: 164px;
+            left: 61px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_18_left {
+            top: 164px;
+            left: 102px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_29 {
+            top: 164px;
+            left: 143px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_28 {
+            top: 164px;
+            left: 370px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_242 {
+            top: 164px;
+            left: 411px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_18_right {
+            width: 54px;
+            top: 164px;
+            left: 452px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_91_right {
+            top: 164px;
+            left: 513px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard div#key_17_right {
+            width: 56px;
+            top: 164px;
+            left: 554px;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.right {
+            background-color: #eee;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.little.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.little.right {
+            background-color: #e1f7e1;
+            border-color: #92e390;
+            color: #3bcc37;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.ring.right {
+            background-color: #e0f6f0;
+            border-color: #90e3cd;
+            color: #37cca5;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.middle.left,
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.middle.right {
+            background-color: #e0f3f6;
+            border-color: #95dce7;
+            color: #39bfd4;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.index.left {
+            background-color: #e0ebf7;
+            border-color: #95bee7;
+            color: #3a86d3;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.index.right {
+            background-color: #f7e0f7;
+            border-color: #e593e6;
+            color: #d151d3;
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.key_f:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -5px;
+            width: 10px;
+            height: 2px;
+            border-radius: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #virtual_keyboard #vk_container #full_keyboard.home_position div.key_j:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -5px;
+            width: 10px;
+            height: 2px;
+            border-radius: 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard {
+            position: relative;
+            width: 159px;
+            margin: 0 0 0 auto;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #d8d8d8;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 34px;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_48 {
+            top: 164px;
+            left: 0;
+            width: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_49 {
+            top: 123px;
+            left: 0;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_50 {
+            top: 123px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_51 {
+            top: 123px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_52 {
+            top: 82px;
+            left: 0px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_53 {
+            top: 82px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_54 {
+            top: 82px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_55 {
+            top: 41px;
+            left: 0px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_56 {
+            top: 41px;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_57 {
+            top: 41px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_47 {
+            top: 0;
+            left: 41px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_42 {
+            top: 0;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_45 {
+            top: 0;
+            left: 123px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_46 {
+            top: 164px;
+            left: 82px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.key_43 {
+            top: 41px;
+            left: 123px;
+            height: 75px;
+            line-height: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div#key_13 {
+            top: 123px;
+            left: 123px;
+            height: 75px;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div#key_144 {
+            top: 0;
+            left: 0;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.active {
+            background-color: #ff9c00 !important;
+            border-color: #ff9c00 !important;
+            color: #fff !important;
+        }
+
+        #virtual_keyboard #vk_container #ten_keyboard div.deco_key {
+            box-shadow: none;
+        }
+
+        .pp_content {
+            background: #fff;
+        }
+
+        .pp-fade {
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .pp_details {
+            margin: 0;
+            height: 40px;
+            border-bottom: 1px solid #cacaca;
+            position: relative;
+        }
+
+        a#pp_help {
+            color: '#00baed';
+            display: block;
+            text-indent: -10000px;
+            overflow: hidden;
+            position: absolute;
+            top: 6px;
+            right: 70px;
+            width: 63px;
+            height: 27px;
+            background: url('https://www.e-typing.ne.jp/images/common/pp_help_btn.png') no-repeat;
+        }
+
+        .pp_close {
+            color: '#00baed';
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            top: 6px;
+            right: 0;
+            width: 63px;
+            height: 27px;
+            cursor: pointer;
+        }
+
+        .pp_description {
+            margin: 0 0 0 5px;
+            color: #7b7a7a;
+            font-size: 150%;
+            line-height: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        #pp_full_res {
+            margin: 0;
+            padding: 5px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://www.e-typing.ne.jp/roma/check/ -->
+
+    <div class="pp_content" style="height: 621px; width: 748px;">
+        <div class="pp_fade" style="display: block;">
+            <div class="pp_details clearfix" style="width: 728px;">
+                <!-- <a id="pp_help" href="https://www.e-typing.ne.jp/app/help.html" target="typing_content">Help</a> -->
+                <button class="pp_close" onclick="submitTest()">Submit</button>
+                <p class="pp_description">腕試しレベルチェック</p>
+            </div>
+            <div id="pp_full_res">
+
+                <input id="type-rank" value="" style="margin:10px" />
+
+                <iframe
+                    src="https://www.e-typing.ne.jp/app/standard.asp?sct=trysc.trysc.trysc&amp;st=std&amp;im=0&amp;s=0"
+                    width="728" height="565" frameborder="0" name="typing_content" id="typing_content">
+                </iframe>
+
+                <!-- result -->
+                <div id="app" style="transform-origin: center top; transform: scale(1.001);">
+                    <div id="result">
+                        <article>
+                            <section id="current">
+                                <h1>今回のタイピング結果</h1>
+
+                                <div id="exampleList">
+                                    <ul>
+                                        <li>
+                                            <div class="example">柿の木には思い出がある</div>
+                                            <div class="sentence">KAKINOKINIHAOMOIDEGA<span class="miss">A</span>RU
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="example">夕陽とおなじモミジの色</div>
+                                            <div class="sentence">YUUHITOONAJIMOMIJINOIRO</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">たそがれに染まる町</div>
+                                            <div class="sentence">TASOGARENISOMARUMATI</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">何で秋休みはないんだろ</div>
+                                            <div class="sentence">NANNDEAKIYASUMIHANAINNDA<span class="miss">R</span>O
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="example">赤や黄色、いろんな色の落ち葉がたくさん</div>
+                                            <div class="sentence">AKAYAKIIRO<span class="miss">,</span>I<span
+                                                    class="miss">R</span>ONNNAIRONOOTIBAGATAK<span
+                                                    class="miss">U</span>SANN</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">大好きな食欲の秋</div>
+                                            <div class="sentence">DAISUKINASYOKUYOK<span class="miss">U</span>N<span
+                                                    class="miss">O</span>AKI</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">私の高校は秋休みがある</div>
+                                            <div class="sentence">WATASINOKOUKOUHAAKIYASUMIGAARU</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">焼きいもやさんがきた</div>
+                                            <div class="sentence">YAKIIMOYASANNGAKITA</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">夕暮れ、踏み切り、赤ちょうちん</div>
+                                            <div class="sentence">YUUGURE,FUMIKIRI,AKATYOUTINN</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">芋に栗、どれをとってもおいしい秋</div>
+                                            <div class="sentence">IMONIKURI,DOREWOTOTTEMOOISIIAKI</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">すずむしが子守唄</div>
+                                            <div class="sentence">SUZUMUSIGAKOMORIUTA</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">月のウサギが笑ってる</div>
+                                            <div class="sentence">TUKINOUSAGIGAWARATTERU</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">枯葉ふみに行こう</div>
+                                            <div class="sentence">KAREHAFUMINIIKOU</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">今夜は秋サバの味噌煮がいいな</div>
+                                            <div class="sentence">KONNYAHAAKISABANOMISONIGAIINA</div>
+                                        </li>
+                                        <li>
+                                            <div class="example">上着、重ね着オシャレの秋</div>
+                                            <div class="sentence">UWAGI,KASANEGIOSYARENOAKI</div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="result_data">
+                                    <ul>
+                                        <li>
+                                            <div class="title">スコア</div>
+                                            <div class="data">12</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">レベル</div>
+                                            <div class="data">E-</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">入力時間</div>
+                                            <div class="data">9分37秒96</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">入力文字数</div>
+                                            <div class="data">153</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">ミス入力数</div>
+                                            <div class="data">10</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">WPM</div>
+                                            <div class="data">15.88</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">正確率</div>
+                                            <div class="data">93.46%</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">苦手キー</div>
+                                            <div class="data">R U A O ,</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section id="prev">
+                                <h1>前回の結果</h1>
+
+                                <div class="result_data">
+                                    <ul>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                        <li>
+                                            <div class="data">-</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <div id="comment">
+                                <div class="container">できないと思っていても、やってみたらできたことは多い。</div>
+                            </div>
+                        </article>
+
+                        <div id="btn_area">
+                            <a id="replay_btn" class="btn">もう1回</a>
+                            <a id="twitter_btn" class="btn">ツイート</a><a id="close_btn" class="btn">閉じる</a><a
+                                id="miss_only_btn" class="btn">ミスだけ</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end result -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- https://www.e-typing.ne.jp/app -->
